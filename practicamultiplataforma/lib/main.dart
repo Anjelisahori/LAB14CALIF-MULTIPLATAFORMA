@@ -4,9 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'screens/home_screen.dart';
 
+// Definición de la nueva paleta de colores como constantes
+const Color _kPrimaryColor = Color(0xFF9D79BC); // Purple Mountain Majesty
+const Color _kAccentColor = Color(0xFFA14DA0); // Purpureus
+const Color _kDarkPrimaryColor = Color(0xFF7E1F86); // Dark Magenta
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
@@ -31,13 +36,15 @@ class MyApp extends StatelessWidget {
       title: 'Fashion Store',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: const Color(0xFF6C5CE7),
+        // Aplicamos el nuevo color primario
+        primaryColor: _kPrimaryColor,
         scaffoldBackgroundColor: const Color(0xFFF8F9FD),
         fontFamily: 'Roboto',
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF6C5CE7),
-          primary: const Color(0xFF6C5CE7),
-          secondary: const Color(0xFFFD79A8),
+          seedColor: _kPrimaryColor,
+          primary: _kPrimaryColor,
+          // Aplicamos el nuevo color secundario
+          secondary: _kAccentColor,
         ),
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
@@ -51,7 +58,7 @@ class MyApp extends StatelessWidget {
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFF6C5CE7),
+            backgroundColor: _kPrimaryColor,
             foregroundColor: Colors.white,
             elevation: 0,
             shape: RoundedRectangleBorder(
